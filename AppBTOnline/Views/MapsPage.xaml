@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             x:Class="AppBTOnline.Views.MapsPage"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             x:DataType="models:Player"
+             Title="MapsPage"
+             BackgroundColor="{StaticResource Beige1}">
+    <StackLayout Margin="10">
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="30"
+                     Margin="0,5,0,10">
+            <Button Text="Click para mostrar en el mapa la pista"
+                    Clicked="OnButtonMaped"
+                    Background="{StaticResource Marron1}" 
+                    BorderWidth="2" 
+                    BorderColor="{StaticResource Marron2}"
+                    FontSize="15"
+                    TextColor="{StaticResource Marron2}"/>
+        </StackLayout>
+        <maps:Map IsShowingUser="true" x:Name="map">
+            <x:Arguments>
+                <MapSpan>
+                    <x:Arguments>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>40.4165000</x:Double>
+                                <x:Double>-3.7025600</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                        <x:Double>0.01</x:Double>
+                        <x:Double>0.01</x:Double>
+                    </x:Arguments>
+                </MapSpan>
+            </x:Arguments>
+        </maps:Map>
+        <Slider Margin="20,10,20,10"
+                Maximum="18"
+                Minimum="1"
+                Value="12"
+                ValueChanged="OnSliderValueChanged"
+                ThumbColor="{StaticResource Rojo1}"
+                MinimumTrackColor="{StaticResource Rojo1}"
+                />
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="30"
+                     Margin="20,10,20,10">
+            <Button Text="Street"
+                    Clicked="OnButtonClicked"
+                    Background="Transparent" 
+                    BorderWidth="2" 
+                    BorderColor="{StaticResource Marron2}"
+                    FontSize="18"
+                    TextColor="{StaticResource Marron2}"/>
+            <Button Text="Satellite"
+                    Clicked="OnButtonClicked"
+                    Background="Transparent" 
+                    BorderWidth="2" 
+                    BorderColor="{StaticResource Marron2}"
+                    FontSize="18"
+                    TextColor="{StaticResource Marron2}"/>
+            <Button Text="Hybrid"
+                    Clicked="OnButtonClicked"
+                    Background="Transparent" 
+                    BorderWidth="2" 
+                    BorderColor="{StaticResource Marron2}"
+                    FontSize="18"
+                    TextColor="{StaticResource Marron2}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="30"
+                     Margin="20,10,20,10">
+            <Button Text="Comenzar Prueba"
+                    Clicked="OnStartPrueba"
+                    Background="Transparent" 
+                    BorderWidth="2" 
+                    BorderColor="{StaticResource Marron2}"
+                    FontSize="18"
+                    TextColor="{StaticResource Marron2}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

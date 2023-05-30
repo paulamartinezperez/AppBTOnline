@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             x:Class="AppBTOnline.Views.InfoAllPlayers"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             Title="InfoAllPlayers"
+             BackgroundColor="{StaticResource Beige1}">
+    <Grid RowDefinitions="*,Auto">
+        <Grid ColumnDefinitions="*, *, *, Auto, Auto,Auto,Auto,Auto" Padding="20" Margin="0,0,0,20">
+            <Label Text="Nombre" 
+                                   Grid.Column="0"/>
+            <Label Text="Apellidos"
+                                   Grid.Column="1"/>
+            <Label Text="Centro Educativo"
+                                   Grid.Column="2"/>
+            <Label Text="P1"
+                                   Grid.Column="3"/>
+            <Label Text="P2"
+                                   Grid.Column="4"/>
+            <Label Text="P3"
+                                   Grid.Column="5"/>
+            <Label Text="P4"
+                                   Grid.Column="6"/>
+            <Label Text="P5"
+                                   Grid.Column="7"/>
+        </Grid>
+        <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding Items}"
+                  SelectionMode="Single"
+                  SelectionChanged="CollectionView_SelectionChanged" Margin="0,40,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Player">
+                    <Grid ColumnDefinitions="*, *, *, Auto, Auto,Auto,Auto,Auto" Padding="20">
+                        <Label Text="{Binding Name}"
+                                   Grid.Column="0"/>
+                        <Label Text="{Binding Apellidos}"
+                                   Grid.Column="1"/>
+                        <Label Text="{Binding CentroEducativo}"
+                                   Grid.Column="2"/>
+                        <Label Text="{Binding Intentos_1}"
+                                   Grid.Column="3"/>
+                        <Label Text="{Binding Intentos_2}"
+                                   Grid.Column="4"/>
+                        <Label Text="{Binding Intentos_3}"
+                                   Grid.Column="5"/>
+                        <Label Text="{Binding Intentos_4}"
+                                   Grid.Column="6"/>
+                        <Label Text="{Binding Intentos_5}"
+                                   Grid.Column="7"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="Comenzar Juego" Clicked="OnItemAdded" BackgroundColor="{StaticResource Rosa1}"
+                Margin="20"/>
+    </Grid>
+</ContentPage>

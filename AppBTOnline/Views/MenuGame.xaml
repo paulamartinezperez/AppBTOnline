@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBTOnline.Views.MenuGame"
+             Title="Menu Game"
+              BackgroundColor="{StaticResource Beige1}">
+    <VerticalStackLayout>
+        <Image Source="Images/tituloportada.png" Aspect="AspectFill" Margin="20,25,20,0"/>
+        <Label Text="Si quieres ver el Mapa para encontrar la primera pista: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="17" Margin="15,50,15,0" />
+        <Button Grid.Row="1" Text="Mapa ruta" Clicked="OnMapGame"
+                Margin="100,25,100,50" 
+                Background="Transparent" 
+                BorderWidth="2" 
+                BorderColor="{StaticResource Marron2}"
+                FontSize="18"
+                TextColor="{StaticResource Marron2}"/>
+        <Label Text="Información del Jugador:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="17" Margin="15,0,15,0" />
+        <Button Grid.Row="1" Text="Información Jugador" Clicked="OnInformation"
+                Margin="100,25,100,130" 
+                Background="Transparent" 
+                BorderWidth="2" 
+                BorderColor="{StaticResource Marron2}"
+                FontSize="18"
+                TextColor="{StaticResource Marron2}"/>
+
+        <Image Source="Images/imagenportada.png" Aspect="AspectFill"/>
+    </VerticalStackLayout>
+</ContentPage>

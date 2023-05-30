@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBTOnline.Views.FinGame"
+             Title="FinGame"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             x:DataType="models:Player"
+             BackgroundColor="{StaticResource Beige1}">
+    <StackLayout x:Name="myStackLayout">
+        <Image Source="Images/tituloportada.png" Aspect="AspectFill" Margin="20,25,20,25"/>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Nombre" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Name}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Apellidos" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Apellidos}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Centro Educativo" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding CentroEducativo}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+            <Label Text="Intentos prueba 1" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Intentos_1}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Intentos prueba 2" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Intentos_2}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Intentos prueba 3" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Intentos_3}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Intentos prueba 4" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Intentos_4}"
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Grid ColumnDefinitions="*, *"  Margin="30,10,25,10">
+                <Label Text="Intentos prueba 5" 
+                                   Grid.Column="0" FontSize="15"/>
+                <Label Text="{Binding Intentos_5}" 
+                                   Grid.Column="1" FontSize="15"/>
+            </Grid>
+        <Label Text="¡FIN DEL JUEGO!" FontSize="Title" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="70,20,70,0"/>
+        <Image Source="Images/imagenportada.png" Aspect="AspectFill" Margin="0,30,0,0"/>
+    </StackLayout>
+</ContentPage>

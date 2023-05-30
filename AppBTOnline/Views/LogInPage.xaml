@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBTOnline.Views.LogInPage"
+             Title="LogInPage"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             BackgroundColor="{StaticResource Beige1}"
+             x:DataType="models:Player"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Image Source="Images/tituloportada.png" Aspect="AspectFill" Margin="20,25,20,25"/>
+            <Label Text="Antes de comenzan el juego necesitamos tus datos...." FontSize="15" Margin="10,0,10,0"  VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label Text="NOMBRE" VerticalOptions="Center"  HorizontalTextAlignment="Center" FontSize="17" Margin="0,20,10,0" FontFamily="Arial"/>
+            <Entry Text="{Binding Name}" VerticalOptions="Center" FontSize="15" HorizontalTextAlignment="Center" Margin="50,0,50,20" />
+            <Label Text="APELLIDOS" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="17" Margin="0,20,10,0" FontFamily="Arial"/>
+            <Entry Text="{Binding Apellidos}" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" Margin="20,0,20,20"/>
+            <Label Text="CENTRO EDUCATIVO" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="17" Margin="0,20,10,0" FontFamily="Arial"/>
+            <Entry Text="{Binding CentroEducativo}" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" Margin="10,0,10,0"/>
+            <Button Text="¡Comenzar!"
+                    Clicked="OnSaveClicked"
+                     Margin="100,25,100,50" 
+                Background="Transparent" 
+                BorderWidth="2" 
+                BorderColor="{StaticResource Marron2}"
+                FontSize="18"
+                TextColor="{StaticResource Marron2}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

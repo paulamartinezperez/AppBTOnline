@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:AppBTOnline.Data"
+             x:Class="AppBTOnline.Views.InfoCuestionsPlayer"
+             Title="InfoCuestionsPlayer"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             x:DataType="models:Player">
+
+
+    <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{x:Static data:PreguntasNivel1.Preguntas}"
+                  SelectionMode="Single">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Cuestion">
+                <Grid ColumnDefinitions="*, *,Auto" 
+                      RowDefinitions="*,*,*"  Padding="20">
+                    <Label Text="------>"
+                                   Grid.Column="0"
+                                   Grid.Row="0"/>
+                    <Label Text="{Binding ID}"
+                                   Grid.Column="1"
+                                   Grid.Row="0"/>
+                    <Label Text="{Binding Pregunta}"
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+                    <Label Text="{Binding Respuesta1}"
+                                   Grid.Row="1"
+                                   Grid.Column="0"/>
+                    <Label Text="{Binding Respuesta2}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+                    <Label Text="{Binding Respuesta3}"
+                                   Grid.Row="1"
+                                   Grid.Column="2"/>
+                    <Label Text="{Binding Solucion}"
+                                   Grid.Row="2"
+                                   Grid.Column="0"/>
+                    <Label Text="{Binding CoordLatitud}"
+                                   Grid.Row="2"
+                                   Grid.Column="1"/>
+                    <Label Text="{Binding CoordLongitud}"
+                                   Grid.Row="2"
+                                   Grid.Column="2"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

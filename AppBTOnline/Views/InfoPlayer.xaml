@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBTOnline.Views.InfoPlayer"
+             Title="InfoPlayer"
+             xmlns:models="clr-namespace:AppBTOnline.Models"
+             x:DataType="models:Player"
+             BackgroundColor="{StaticResource Beige1}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Image Source="Images/tituloportada.png" Aspect="AspectFill" Margin="20,25,20,25"/>
+            <Label Text="NOMBRE" VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,10" />
+            <Label Text="{Binding Name}" VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,10"/>
+            <Label Text="APELLIDOS" VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,10" />
+            <Label Text="{Binding Apellidos}" VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,10" />
+            <Label Text="CENTRO EDUCATIVO"  VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,10"/>
+            <Label Text="{Binding CentroEducativo}" VerticalOptions="Center" 
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="18"
+            Margin="20,20,20,35" />
+            <Image Source="Images/imagenportada.png" Aspect="AspectFill"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
