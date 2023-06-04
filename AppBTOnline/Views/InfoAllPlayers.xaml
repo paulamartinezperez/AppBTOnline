@@ -8,7 +8,7 @@
              Title="InfoAllPlayers"
              BackgroundColor="{StaticResource Beige1}">
     <Grid RowDefinitions="*,Auto">
-        <Grid ColumnDefinitions="*, *, *, Auto, Auto,Auto,Auto,Auto" Padding="20" Margin="0,0,0,20">
+        <Grid ColumnDefinitions="*, *, *, 20, 20,20,20,20" Padding="20" Margin="0,0,0,20">
             <Label Text="Nombre" 
                                    Grid.Column="0"/>
             <Label Text="Apellidos"
@@ -33,7 +33,7 @@
                   SelectionChanged="CollectionView_SelectionChanged" Margin="0,40,0,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Player">
-                    <Grid ColumnDefinitions="*, *, *, Auto, Auto,Auto,Auto,Auto" Padding="20">
+                    <Grid ColumnDefinitions="*, *, *,20, 20,20,20,20" Padding="20">
                         <Label Text="{Binding Name}"
                                    Grid.Column="0"/>
                         <Label Text="{Binding Apellidos}"
