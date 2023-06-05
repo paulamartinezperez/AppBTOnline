@@ -9,6 +9,6 @@ public static class Constants
     public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.SharedCache;
 
     public static string DatabasePath =>
-    $"server=localhost;port=8080;database=BDappBTOnline;user=root;password=T3m2D1t1$;";
+    $"server=147.96.85.89;port=8080;database=BDappBTOnline;user=BDappBTOnline;password=BDappBTOnline;";
 
 }

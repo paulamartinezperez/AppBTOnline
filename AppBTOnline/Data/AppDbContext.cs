@@ -5,7 +5,7 @@ namespace AppBTOnline.Data;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Player> Players { get; set; }
+    public DbSet<Player> jugadores{ get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -28,7 +28,7 @@ public class AppDbContext : DbContext
         {
             string connectionString = Constants.DatabasePath;
 
-            optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 27))); // Habilitar resiliencia ante errores transitorios
+            optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 33))); // Habilitar resiliencia ante errores transitorios
         }
     }
 

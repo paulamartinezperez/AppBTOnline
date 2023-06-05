@@ -13,36 +13,36 @@ public class PlayerDatabase
     {
         string connectionString = Constants.DatabasePath;
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 27)));
+        optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 33)));
 
         Database = new AppDbContext(optionsBuilder.Options);
     }
 
     public async Task<List<Player>> GetItemsAsync()
     {
-        return await Database.Players.ToListAsync();
+        return await Database.jugadores.ToListAsync();
     }
 
     public async Task<bool> CheckPlayerDetailsAsync(string playerName, string playerLastName, string playerSchool)
     {
-        var players = await Database.Players.ToListAsync();
+        var players = await Database.jugadores.ToListAsync();
         return players.Any(player => player.Name.Equals(playerName) && player.Apellidos.Equals(playerLastName) && player.CentroEducativo.Equals(playerSchool));
     }
 
     public async Task<Player> GetItemAsync(int id)
     {
-        return await Database.Players.FirstOrDefaultAsync(i => i.ID == id);
+        return await Database.jugadores.FirstOrDefaultAsync(i => i.ID == id);
     }
 
     public async Task<int> SaveItemAsync(Player item)
     {
         if (item.ID != 0)
         {
-            Database.Players.Update(item);
+            Database.jugadores.Update(item);
         }
         else
         {
-            Database.Players.Add(item);
+            Database.jugadores.Add(item);
         }
 
         return await Database.SaveChangesAsync();
@@ -50,7 +50,7 @@ public class PlayerDatabase
 
     public async Task<int> DeleteItemAsync(Player item)
     {
-        Database.Players.Remove(item);
+        Database.jugadores.Remove(item);
         return await Database.SaveChangesAsync();
     }
 }
