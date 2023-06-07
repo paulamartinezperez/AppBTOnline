@@ -31,16 +31,6 @@ public class PlayerDatabase
         return players.Any(player => player.Name.Equals(playerName) && player.Apellidos.Equals(playerLastName) && player.CentroEducativo.Equals(playerSchool));
     }
 
-
-    //public async Task<List<Player>> GetItemsNotDoneAsync()
-    //{
-    //    await Init();
-    //    return await Database.Table<Player>().Where(t => t.Done).ToListAsync();
-
-    //    // SQL queries are also possible
-    //    //return await Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-    //}
-
     public async Task<Player> GetItemAsync(int id)
     {
         await Init();
