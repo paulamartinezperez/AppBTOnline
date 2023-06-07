@@ -31,11 +31,11 @@ public partial class LogInPage : ContentPage
 
         bool playerExists = await database.CheckPlayerDetailsAsync(Item.Name, Item.Apellidos, Item.CentroEducativo);
 
-        //if (playerExists)
-       // {
-       //     await DisplayAlert("Error de usuario", "Este usuario ya existe en nuestra base de datos :(", "OK");
+        if (playerExists)
+        {
+            await DisplayAlert("Error de usuario", "Este usuario ya existe en nuestra base de datos :(", "OK");
             return; // Aquí puedes detener la ejecución o realizar alguna otra acción
-      //  }
+        }
 
         Item.NumeroPrueba = 0;
 
