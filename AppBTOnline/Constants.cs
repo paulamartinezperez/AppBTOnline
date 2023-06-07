@@ -1,17 +1,14 @@
 ﻿namespace AppBTOnline;
 
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 public static class Constants
 {
-    public const string DatabaseFilename = "SQLiteBTOnline.db3";
+    public const string DatabaseFilename = "MySQLBTO";
 
-    public const SQLite.SQLiteOpenFlags Flags =
-        // open the database in read/write mode
-        SQLite.SQLiteOpenFlags.ReadWrite |
-        // create the database if it doesn't exist
-        SQLite.SQLiteOpenFlags.Create |
-        // enable multi-threaded database access
-        SQLite.SQLiteOpenFlags.SharedCache;
+    public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.SharedCache;
 
     public static string DatabasePath =>
-        Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
+    $"server=localhost;port=8080;database=BDappBTOnline;user=root;password=T3m2D1t1$;";
+
 }
