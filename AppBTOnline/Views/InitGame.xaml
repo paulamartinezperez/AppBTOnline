@@ -12,7 +12,7 @@
     <VerticalStackLayout>
         <Image Source="Images/tituloportada.png" Aspect="AspectFill" Margin="20,25,20,25"/>
         <Label 
-            Text="Las normas del juego son muy fáciles... Todos conocemos el juego de la búsqueda del tesoro,pues en este caso en vez de usar el método tradicional de los pistas en papel lo haremos a través de esta aplicación"
+            Text="Las normas del juego son muy fáciles... Todos conocemos el juego de la búsqueda del tesoro, pues en este caso en vez de usar el método tradicional de los pistas en papel lo haremos a través de esta aplicación"
             VerticalOptions="Center" 
             HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
             FontSize="15"

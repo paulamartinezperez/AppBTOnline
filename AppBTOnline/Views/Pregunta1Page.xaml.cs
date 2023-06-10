@@ -156,9 +156,21 @@ public partial class Pregunta1Page : ContentPage
     {
         var aux = PreguntasNivel1.Preguntas;
         Cuestion aux_item = aux.ElementAt(0);
+
+        var intento = new Intento();
+        intento.IDPlayer = Item.ID;
+        intento.IDCuestion = aux_item.ID;
+        intento.NumeroIntento = await database.GetPlayerIntentoPreguntaCount(Item.ID, aux_item.ID) + 1;
+
+        DateTime fechaActual = DateTime.Now;
+        intento.Tiempo = fechaActual.ToString();
+
         if (aux_resp_player == aux_item.Solucion)
         {
-            Item.Intentos_1 = Item.Intentos_1 + 1;
+            intento.Resultado = "correcto";
+            await database.SaveIntento(intento);
+            var prueba = database.AllPlayerintentos(Item.ID);
+
             Item.NumeroPrueba = Item.NumeroPrueba + 1;
             await database.SaveItemAsync(Item);
             await DisplayAlert("Enhorabuena!", "Has respondido correctamente, por lo que pasas a la siguiente pista!", "Aceptar");
@@ -170,7 +182,10 @@ public partial class Pregunta1Page : ContentPage
         }
         else
         {
-            Item.Intentos_1 = Item.Intentos_1 + 1;
+            intento.Resultado = "incorrecto";
+            await database.SaveIntento(intento);
+            var prueba = database.AllPlayerintentos(Item.ID);
+
             string text;
             text = "NO HAS RESPONDIDO CORRECTAMENTE";
             await DisplayAlert("Info", text, "OK");

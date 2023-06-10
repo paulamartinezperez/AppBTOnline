@@ -14,8 +14,8 @@ public static class PreguntasNivel1
         {
             ID = 0,
             Pregunta = "Empezamos este juego en la Playa Mayor de Madrid. Esta plaza de estilo Barroco fue inagurada en 1619." +
-                        " En la actualidad es uno de los lugares emblematicos de Madrid, teniendo una comida típica la cual debeis adivinar," +
-                        " por lo que aqúi dejamos las opciones:",
+                        " En la actualidad es uno de los lugares emblemáticos de Madrid, teniendo una comida típica la cual debeis adivinar," +
+                        " por lo que aquí dejamos las opciones:",
             Respuesta1 = "Paella",
             Respuesta2 = "Chocolate con Churros",
             Respuesta3 = "Bocadillo de Calamares",

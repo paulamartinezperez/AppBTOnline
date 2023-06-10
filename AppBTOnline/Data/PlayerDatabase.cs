@@ -1,7 +1,6 @@
 ﻿using SQLite;
 using AppBTOnline.Models;
 
-
 namespace AppBTOnline.Data;
 
 public class PlayerDatabase
@@ -16,7 +15,9 @@ public class PlayerDatabase
             return;
 
         Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-        var result = await Database.CreateTableAsync<Player>();
+        await Database.CreateTableAsync<Player>();
+        await Database.CreateTableAsync<Intento>();
+
     }
     public async Task<List<Player>> GetItemsAsync()
     {
@@ -56,4 +57,33 @@ public class PlayerDatabase
         await Init();
         return await Database.DeleteAsync(item);
     }
+
+    public async Task<List<Intento>> AllPlayerintentos(int id)
+    {
+        await Init();
+        return await Database.Table<Intento>().Where(aux => aux.IDPlayer == id).ToListAsync();
+         
+    }
+
+    public async Task<List<Intento>> AllPlayerintentoPregunta(int id, int num_pregunta)
+    {
+        await Init();
+        return await Database.Table<Intento>().Where(aux => aux.IDPlayer == id && aux.IDCuestion == num_pregunta).ToListAsync();
+
+    }
+
+    public async Task<int> GetPlayerIntentoPreguntaCount(int id, int num_pregunta)
+    {
+        await Init();
+        var intentos = await Database.Table<Intento>().Where(aux => aux.IDPlayer == id && aux.IDCuestion == num_pregunta).ToListAsync();
+        return intentos.Count;
+    }
+
+    public async Task<int> SaveIntento(Intento item)
+    {
+        await Init();
+        return await Database.InsertAsync(item);
+    }
+
+
 }

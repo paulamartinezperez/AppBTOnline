@@ -8,23 +8,13 @@
              Title="InfoAllPlayers"
              BackgroundColor="{StaticResource Beige1}">
     <Grid RowDefinitions="*,Auto">
-        <Grid ColumnDefinitions="*, *, *, 20, 20,20,20,20" Padding="20" Margin="0,0,0,20">
+        <Grid ColumnDefinitions="*, *, *" Padding="20" Margin="0,0,0,20">
             <Label Text="Nombre" 
                                    Grid.Column="0"/>
             <Label Text="Apellidos"
                                    Grid.Column="1"/>
             <Label Text="Centro Educativo"
                                    Grid.Column="2"/>
-            <Label Text="P1"
-                                   Grid.Column="3"/>
-            <Label Text="P2"
-                                   Grid.Column="4"/>
-            <Label Text="P3"
-                                   Grid.Column="5"/>
-            <Label Text="P4"
-                                   Grid.Column="6"/>
-            <Label Text="P5"
-                                   Grid.Column="7"/>
         </Grid>
         <CollectionView 
                   VerticalOptions="Fill"
@@ -33,23 +23,13 @@
                   SelectionChanged="CollectionView_SelectionChanged" Margin="0,40,0,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Player">
-                    <Grid ColumnDefinitions="*, *, *,20, 20,20,20,20" Padding="20">
+                    <Grid ColumnDefinitions="*, *, *" Padding="20">
                         <Label Text="{Binding Name}"
                                    Grid.Column="0"/>
                         <Label Text="{Binding Apellidos}"
                                    Grid.Column="1"/>
                         <Label Text="{Binding CentroEducativo}"
                                    Grid.Column="2"/>
-                        <Label Text="{Binding Intentos_1}"
-                                   Grid.Column="3"/>
-                        <Label Text="{Binding Intentos_2}"
-                                   Grid.Column="4"/>
-                        <Label Text="{Binding Intentos_3}"
-                                   Grid.Column="5"/>
-                        <Label Text="{Binding Intentos_4}"
-                                   Grid.Column="6"/>
-                        <Label Text="{Binding Intentos_5}"
-                                   Grid.Column="7"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
